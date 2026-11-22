@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; background: #05030a; color-scheme: dark; }
+  body { @apply bg-night-950 font-body text-white antialiased; overscroll-behavior-y: none; }
+  button { touch-action: manipulation; }
+  :focus-visible { outline: 3px solid #ffc83d; outline-offset: 2px; border-radius: 12px; }
+  ::selection { background: #ff2bd6; color: #fff; }
+}
+
+@keyframes riseBack { from { opacity: 0; transform: translateY(-14px) scale(.98); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
